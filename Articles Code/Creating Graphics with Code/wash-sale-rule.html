@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding the Wash Sale Rule</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        header h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            color: #e2e8f0;
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .fact-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .fact-card h2 {
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .fact-card h3 {
+            color: #4a5568;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid #667eea;
+            padding-left: 1rem;
+        }
+
+        .fact-card p {
+            color: #718096;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 5px solid #e17055;
+        }
+
+        .example-box {
+            background: linear-gradient(135deg, #a8e6cf, #88d8a3);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 5px solid #00b894;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #ffb3ba, #ff9999);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 5px solid #e74c3c;
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .timeline-item {
+            background: #667eea;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 25px;
+            font-weight: bold;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .timeline-arrow {
+            font-size: 2rem;
+            color: #667eea;
+        }
+
+        .key-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .key-point {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #2196f3;
+        }
+
+        .key-point h4 {
+            color: #1976d2;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .key-point p {
+            color: #424242;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .fact-card {
+                padding: 1.5rem;
+            }
+            
+            .timeline {
+                flex-direction: column;
+            }
+            
+            .timeline-arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 The Wash Sale Rule Explained</h1>
+            <p class="subtitle">Understanding Tax Implications for Smart Investing 💡</p>
+        </header>
+
+        <div class="content-grid">
+            <div class="fact-card">
+                <h2>🔍 What is a Wash Sale?</h2>
+                <p>A wash sale occurs when you sell a security at a loss and then purchase the same or substantially identical security within 30 days before or after the sale. This creates a 61-day window where the wash sale rule applies.</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item">30 Days Before</div>
+                    <div class="timeline-arrow">➡️</div>
+                    <div class="timeline-item">Sale Date</div>
+                    <div class="timeline-arrow">➡️</div>
+                    <div class="timeline-item">30 Days After</div>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>⚠️ Key Point:</strong> The rule prevents investors from claiming tax losses while maintaining essentially the same investment position.
+                </div>
+            </div>
+
+            <div class="fact-card">
+                <h2>🎯 Purpose of the Rule</h2>
+                <p>The IRS created this rule to prevent investors from manipulating the tax system by "manufacturing" artificial losses. Without this rule, investors could:</p>
+                
+                <div class="key-points">
+                    <div class="key-point">
+                        <h4>🔄 Sell at Loss</h4>
+                        <p>Claim tax deduction for the loss</p>
+                    </div>
+                    <div class="key-point">
+                        <h4>🛒 Repurchase Quickly</h4>
+                        <p>Buy back the same security immediately</p>
+                    </div>
+                    <div class="key-point">
+                        <h4>📈 Keep Position</h4>
+                        <p>Maintain the same investment exposure</p>
+                    </div>
+                    <div class="key-point">
+                        <h4>💰 Reduce Taxes</h4>
+                        <p>Lower tax liability artificially</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fact-card">
+                <h2>📝 How It Works - Example</h2>
+                
+                <div class="example-box">
+                    <h3>💼 Real-World Scenario</h3>
+                    <p><strong>Step 1:</strong> You buy 100 shares of XYZ stock for $10 per share ($1,000 total)</p>
+                    <p><strong>Step 2:</strong> Stock drops, you sell for $8 per share ($800 total) = $200 loss</p>
+                    <p><strong>Step 3:</strong> Three weeks later, you repurchase 100 shares for $6 per share ($600 total)</p>
+                    <p><strong>Result:</strong> 🚫 The $200 loss is disallowed for current tax year</p>
+                </div>
+
+                <h3>🔄 What Happens to Your Loss?</h3>
+                <p>The disallowed loss isn't lost forever! It gets added to the cost basis of your new shares:</p>
+                <ul style="margin-left: 2rem; color: #718096;">
+                    <li>New cost basis: $600 (purchase price) + $200 (disallowed loss) = $800</li>
+                    <li>If you later sell for $1,000, your taxable gain is only $200 instead of $400</li>
+                    <li>The holding period from your original shares carries over</li>
+                </ul>
+            </div>
+
+            <div class="fact-card">
+                <h2>⚖️ Tax Consequences</h2>
+                
+                <div class="warning-box">
+                    <h3>🚫 What You Can't Do</h3>
+                    <p>You cannot deduct the loss on your current tax return if you trigger the wash sale rule.</p>
+                </div>
+
+                <div class="example-box">
+                    <h3>✅ What You Can Do</h3>
+                    <p>The loss is added to the cost basis of the replacement security, potentially reducing future taxes.</p>
+                </div>
+
+                <h3>📊 Key Tax Benefits</h3>
+                <div class="key-points">
+                    <div class="key-point">
+                        <h4>📈 Higher Cost Basis</h4>
+                        <p>Reduces future capital gains</p>
+                    </div>
+                    <div class="key-point">
+                        <h4>⏰ Extended Holding Period</h4>
+                        <p>May qualify for long-term capital gains treatment</p>
+                    </div>
+                    <div class="key-point">
+                        <h4>📉 Larger Future Losses</h4>
+                        <p>Increases deductible loss if sold at a loss later</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fact-card">
+                <h2>🎯 What Triggers a Wash Sale?</h2>
+                
+                <h3>🔄 Substantially Identical Securities</h3>
+                <p>The rule applies when you purchase securities that are substantially identical to what you sold, including:</p>
+                
+                <div class="key-points">
+                    <div class="key-point">
+                        <h4>📈 Same Stock</h4>
+                        <p>Exact same company shares</p>
+                    </div>
+                    <div class="key-point">
+                        <h4>📊 Options & Contracts</h4>
+                        <p>Options to buy the same security</p>
+                    </div>
+                    <div class="key-point">
+                        <h4>🏦 IRA Purchases</h4>
+                        <p>Buying in retirement accounts</p>
+                    </div>
+                    <div class="key-point">
+                        <h4>👥 Spouse Purchases</h4>
+                        <p>Your spouse buying the same security</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>💡 Important:</strong> The rule only applies to sales at a loss. Profitable sales are not affected by wash sale rules.
+                </div>
+            </div>
+
+            <div class="fact-card">
+                <h2>🚀 Avoiding Wash Sales</h2>
+                
+                <h3>⏰ Wait It Out</h3>
+                <p>The simplest strategy is to wait more than 30 days before repurchasing the same security.</p>
+                
+                <h3>🔄 Alternative Investments</h3>
+                <p>Consider purchasing similar but not substantially identical securities, such as:</p>
+                <ul style="margin-left: 2rem; color: #718096;">
+                    <li>Different companies in the same sector</li>
+                    <li>ETFs tracking similar indices</li>
+                    <li>Mutual funds with different holdings</li>
+                </ul>
+
+                <div class="warning-box">
+                    <strong>⚠️ Day Traders Beware:</strong> Pattern day traders who execute frequent trades may encounter wash sales regularly and should consult tax professionals for guidance.
+                </div>
+            </div>
+
+            <div class="fact-card">
+                <h2>📋 Reporting Wash Sales</h2>
+                
+                <h3>📄 Tax Forms</h3>
+                <p>Wash sales must be reported on Form 8949 when filing your taxes. Most brokers will identify wash sales on your tax documents.</p>
+                
+                <div class="highlight-box">
+                    <strong>💼 Professional Tip:</strong> Keep detailed records of all transactions and consider consulting a tax professional, especially if you're an active trader.
+                </div>
+
+                <h3>🔍 What to Remember</h3>
+                <div class="key-points">
+                    <div class="key-point">
+                        <h4>📊 61-Day Window</h4>
+                        <p>30 days before + sale day + 30 days after</p>
+                    </div>
+                    <div class="key-point">
+                        <h4>🚫 Loss Disallowed</h4>
+                        <p>Cannot deduct on current year return</p>
+                    </div>
+                    <div class="key-point">
+                        <h4>📈 Basis Adjustment</h4>
+                        <p>Loss added to new security's cost basis</p>
+                    </div>
+                    <div class="key-point">
+                        <h4>✅ Not Illegal</h4>
+                        <p>Just affects tax treatment of losses</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
